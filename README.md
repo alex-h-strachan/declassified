@@ -69,7 +69,7 @@ const res = await client.query('SELECT $1::text as message', ['Hello world!'])
 console.log(res.rows[0].message) // Hello world!
 ```
 
-How might we declassified that?
+How might we declassify that?
 ```js
 const declassified = require('declassified')
 const { Client } = require('pg')

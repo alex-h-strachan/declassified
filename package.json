@@ -1,6 +1,6 @@
 {
   "name": "declassified",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A package to help turn class-based libraries into functional ones.",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "url": "https://github.com/metalsheep/declassified/issues"
   },
   "homepage": "https://github.com/metalsheep/declassified#readme",
+  "keywords": ["functional programming", "fp", "library", "classes", "immutable", "freeze"],
   "devDependencies": {
     "standard": "^16.0.3"
   }
