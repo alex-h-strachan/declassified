@@ -1,5 +1,5 @@
 {
-  "name": "declassify",
+  "name": "declassified",
   "version": "1.0.0",
   "description": "A package to help turn class-based libraries into functional ones.",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/metalsheep/declassify.git"
+    "url": "git+ssh://git@github.com/metalsheep/declassified.git"
   },
   "author": "Alex Strachan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/metalsheep/declassify/issues"
+    "url": "https://github.com/metalsheep/declassified/issues"
   },
-  "homepage": "https://github.com/metalsheep/declassify#readme",
+  "homepage": "https://github.com/metalsheep/declassified#readme",
   "devDependencies": {
     "standard": "^16.0.3"
   }

@@ -5,7 +5,7 @@
  * @returns {async function config(...constructorArguments)}
  */
 
-module.exports = function declassify (Constructor, init = a => a) {
+module.exports = function declassified (Constructor, init = a => a) {
   return async function config (...constructorArguments) {
     const instance = new Constructor(...constructorArguments)
     const inited = await init(instance) || instance

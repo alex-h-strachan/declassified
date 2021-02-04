@@ -1,4 +1,4 @@
-# Declassify
+# declassified
 ## Motivation
 A lot of libraries come in the form
 ```js
@@ -36,10 +36,10 @@ This allows asynchronous set-up and protects the internals of the library (the c
 
 ## The solution
 ```js
-const declassify = require('declassify')
+const declassified = require('declassified')
 const MyClass = require('something')
 
-const myLibrary = declassify(MyClassBasedLibrary, async (instance) => {
+const myLibrary = declassified(MyClassBasedLibrary, async (instance) => {
   // do imperative things to the instance here that you'd want to do as part of the setup
 })
 
@@ -69,9 +69,9 @@ const res = await client.query('SELECT $1::text as message', ['Hello world!'])
 console.log(res.rows[0].message) // Hello world!
 ```
 
-How might we declassify that?
+How might we declassified that?
 ```js
-const declassify = require('declassify')
+const declassified = require('declassified')
 const { Client } = require('pg')
 
 const contructorArgs = { host: 'my-db' } //...
@@ -80,7 +80,7 @@ const init = async (instance) => {
   return instance
 }
 
-const client = await declassify(Client, init)(constructorArgs)
+const client = await declassified(Client, init)(constructorArgs)
 
 const res = await client.query('SELECT $1::text as message', ['Hello world!'])
 console.log(res.rows[0].message) // Hello world!

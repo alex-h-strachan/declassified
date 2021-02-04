@@ -1,7 +1,7 @@
-const declassify = require('../index')
+const declassified = require('../index')
 const assert = require('assert')
 
-describe('declassify', () => {
+describe('declassified', () => {
   it('Wraps our toy constructor and gives the expected properties and methods', async () => {
     const TEST_ARGS = ['a', 'test']
     const THING = 'thing'
@@ -17,11 +17,11 @@ describe('declassify', () => {
       }
     }
 
-    const declassified = await declassify(MyClass, async (instance) => {
+    const output = await declassified(MyClass, async (instance) => {
       await instance.aMethod(THING)
     })(...TEST_ARGS)
 
-    assert.deepStrictEqual(declassified, { args: TEST_ARGS, init: true, thing: THING })
+    assert.deepStrictEqual(output, { args: TEST_ARGS, init: true, thing: THING })
   })
 
   it('Uses our return value from the init function', async () => {
@@ -38,11 +38,11 @@ describe('declassify', () => {
       }
     }
 
-    const declassified = await declassify(MyClass, async (instance) => {
+    const output = await declassified(MyClass, async (instance) => {
       return { hello: 'world' }
     })(...TEST_ARGS)
 
-    assert.deepStrictEqual(declassified, { hello: 'world' })
+    assert.deepStrictEqual(output, { hello: 'world' })
   })
 
   it('Uses a default init function', async () => {
@@ -59,9 +59,9 @@ describe('declassify', () => {
       }
     }
 
-    const declassified = await declassify(MyClass)(...TEST_ARGS)
+    const output = await declassified(MyClass)(...TEST_ARGS)
 
-    assert.deepStrictEqual(declassified, { args: TEST_ARGS })
+    assert.deepStrictEqual(output, { args: TEST_ARGS })
   })
 
   it('Returns a frozen copy of the object', async () => {
@@ -78,10 +78,10 @@ describe('declassify', () => {
       }
     }
 
-    const declassified = await declassify(MyClass)(...TEST_ARGS)
+    const output = await declassified(MyClass)(...TEST_ARGS)
 
-    declassified.args = 'different'
+    output.args = 'different'
 
-    assert.deepStrictEqual(declassified, { args: TEST_ARGS })
+    assert.deepStrictEqual(output, { args: TEST_ARGS })
   })
 })
